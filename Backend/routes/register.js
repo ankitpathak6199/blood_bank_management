@@ -1,6 +1,16 @@
-const express = require('express');
-const router = express.Router();
-const path = require('path');
+ const express = require('express');
+ const router = express.Router();
+ const path = require('path');
+
+// import express from 'express';
+// import mongoose from 'mongoose';
+// import path from 'path';
+// import bcrypt from 'bcryptjs';
+// import jwt from 'jsonwebtoken';
+// import  config  from 'config';
+// import { check, validationResult } from 'express-validator';
+// import userSchema from '../models/user.js'
+
 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -8,7 +18,7 @@ const config = require('config');
 const { check, validationResult } = require('express-validator');
 //const normalize = require('normalize-url');
 
-const userSchema = require('../routes/user.js');
+const userSchema = require('../models/user.js');
 
 
 router.post(
@@ -31,7 +41,7 @@ router.post(
     console.log(name,username,password);
 
     try {
-      let user = await doctorschema.findOne({ Username : username });
+      let user = await userSchema.findOne({ Username : username });
 
       if (user) {
         return res
@@ -82,4 +92,4 @@ router.post(
   }
 );
 
-module.exports = router;
+module.exports = router ;
