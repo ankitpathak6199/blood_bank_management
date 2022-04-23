@@ -1,9 +1,20 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
+import { signIn } from '../../../redux/actions/userActions';
 
 import { Routes ,Route } from 'react-router-dom';
 import '../App.css';
 
 function Login() {
+  const [email,setemail] = useState("");
+  const [password,setpassword] = useState("");
+
+  
+
+
+
+   
+  
+  
   return (
  
     <div className="Login">
@@ -16,14 +27,13 @@ function Login() {
     <hr/>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required/>
+    <input type="text" placeholder="Enter Email" name="email" required onChange={e=>{setemail(e.target.value)}}/>
 
     <div class="pw">
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required/>
+    <input type="text" placeholder="Enter Password" name="psw" required onChange = {e => {setpassword(e.target.value)}}/>
     </div>
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required/>
+    
     
     <label>
       <input type="checkbox" checked="checked" name="remember" /> Remember me
@@ -32,7 +42,7 @@ function Login() {
     
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="button" class="cancelbtn" onClick={e=>{console.log({email,password})}}>Cancel</button>
       <button type="submit" class="signupbtn">Sign Up</button>
     </div>
   </div>
