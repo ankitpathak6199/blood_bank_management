@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 table{
 	border-spacing: 8px;
@@ -6,8 +7,33 @@ table{
 th, td {
 		
 	border-spacing: 4px;
+=======
+.bb_name{
+  font-size: large;
+  
+  height : 100px;
+  background-color: antiquewhite;
+  text-align: center;
+  align-content: center;
+  
+>>>>>>> 002cc7fd2613e8bff486e5c1d8ad5875976cd635
 }
+.Card_section{
+  background-color: lightcyan;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+  height : 20vh;
+  
+}
+.Card{
+  background-color: lime;
+ 
+  height : 100%;
+  width :100%;
+  text-align: center;
+vertical-align: middle;
 
+<<<<<<< HEAD
 form{
 	
 	border: 1px #EEEEEE;
@@ -83,3 +109,11 @@ ol{
 	color: black;
 }
 
+=======
+}
+.table_data{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+>>>>>>> 002cc7fd2613e8bff486e5c1d8ad5875976cd635
