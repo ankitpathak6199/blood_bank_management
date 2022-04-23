@@ -24,11 +24,16 @@ catch(e){
 }
 }
 
-const register =(email,password,contact_no, user_name)=>async (dispatch,getstate)=>{
+const register =(email,password,name,age,blood_group,city,state,pincode)=>async (dispatch,getstate)=>{
   dispatch({type: user_register_loading});
 try
 {
-  const {data}= await Axios.post('/users/signup',{email, password,contact_no,user_name,isAdmin: false,items_in_cart: getstate().addtocart.cartitems,total_cart:getstate().addtocart.total});
+  const {data}= await Axios.post('http://localhost:4000/register',{name,age,blood_group,password,email,location : {
+    state : state,
+    city:city,
+    pincode: pincode,
+  },});
+  console.log(data);
 
      dispatch({type: user_register_success, payload: data});
      localStorage.setItem('userInfo',JSON.stringify(data));

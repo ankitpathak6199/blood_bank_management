@@ -3,10 +3,30 @@ import { signIn } from '../redux/actions/userActions';
 
 import { Routes ,Route } from 'react-router-dom';
 import '../App.css';
+import { register } from '../redux/actions/userActions';
 
 function Login() {
   const [email,setemail] = useState("");
   const [password,setpassword] = useState("");
+  const[name,setname] = useState("");
+  const[age,setage] = useState("");
+  const[blood_group,setblood_group] = useState("");
+  const[city,setcity] = useState("");
+  const[state,setstate] = useState("");
+  const[pincode,setspincode]= useState("");
+  const[location_coordinates,setlocation_coordinates] = useState("");
+
+   function submit(){
+    console.log(email);
+   register(email,password,name,age,blood_group,city,state,pincode);
+   
+
+
+
+  }
+
+
+  
 
   
 
@@ -31,11 +51,21 @@ function Login() {
                       
             <label for="chk" aria-hidden="true">Register</label>
                       <div class='signup_form'>
-                      <input type="text" name="txt" placeholder="User name" required=""/>
-            <input type="email" name="email" placeholder="Email" required=""/>
-            <input type="password" name="pswd" placeholder="Password" required=""/>
+                      <input type="text" name="txt" placeholder="name" required="" onChange = {e=>setname(e.target.value)}/>
+            <input type="email" name="email" placeholder="Email" required=""  onChange = {e=>setemail(e.target.value)}/>
+            
+                      
+                      <input type="text" name="txt" placeholder="Blood_Group"  onChange = {e=>setblood_group(e.target.value)} />
+            
+            <input type="text" name="txt" placeholder="State" required=""  onChange = {e=>setstate(e.target.value)}/>
+            <input type="text" name="txt" placeholder="City" required="" onChange = {e=>setcity(e.target.value)}/>
+            <input type="number" name="txt" placeholder="Pincode" required="" onChange = {e=>setspincode(e.target.value)}/>
+            <input type="number" name="txt" placeholder="Age" required="" onChange = {e=>setage(e.target.value)}/>
+            <input type="password" name="pswd" placeholder="Password" required="" onChange = {e=>setpassword(e.target.value)}/>
                       </div>
-                      <button>Sign up</button>
+                      <button onClick={e => {
+                        submit();
+                      }}>Sign up</button>
           </form>
         </div>
   
