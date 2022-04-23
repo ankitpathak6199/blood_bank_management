@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react';
-import { signIn } from '../../../redux/actions/userActions';
+import { signIn } from '../redux/actions/userActions';
 
 import { Routes ,Route } from 'react-router-dom';
 import '../App.css';
