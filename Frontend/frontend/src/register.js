@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Register from './register';
-function App() {
+
+function Register() {
   return (
     <div className="App">
-      <Register />
+      <h3 id ="idlai">aksncoev</h3>
     </div>
   );
 }
 
-export default App;
+export default Register;

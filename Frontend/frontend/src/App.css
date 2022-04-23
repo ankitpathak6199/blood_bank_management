@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+
+table{
+	border-spacing: 8px;
+}
+ 
+th, td {
+		
+	border-spacing: 4px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form{
+	
+	border: 1px #EEEEEE;
+	margin: 4px 2px;
+	
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.register{
+  color: yellow;
+  
+}  
+input[type=text], input[type=password] ,input[type=email] {
+background-color: #EEEEEE;
+border: none;
+color: black;
+width:auto;
+padding: 8px 52px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+}
+select,option{
+	background-color: #EEEEEE;
+border: none;
+color: black;
+width:auto;
+padding: 8px 52px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+} 
+input[type=submit], input[type=reset] {
+background-color: #4CAF50;
+border: none;
+color: white;
+font-size:15px;
+padding: 16px 32px;
+text-decoration: bold;
+margin: 4px 2px;
+cursor: pointer;
+}
+.topnav{
+	overflow:hidden;
+	background-color:#333;
+}
+.topnav a{
+    float:left;
+	color:#f2f2f2;
+	text-align:center;
+	padding:14px 16px;
+	text-decoration:none;
+	font-size:17px;
+}
+.topnav a:hover{
+	color:black;
+	background-color:#ddd;
+}
+.topnav a.active{
+	
+	background-color:#4CAF50;
+	color:white;
+}
+h1{
+	text-align: center;
+	text-transform: uppercase;
+}
+p{
+	text-indent: 50px;
+	text-align: justify;
+	
+}
+ol{
+	color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
