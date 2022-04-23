@@ -22,7 +22,6 @@ function Login() {
 
 
 
-<<<<<<< HEAD
 	 	
 
 <html>
@@ -62,28 +61,6 @@ function Login() {
 	
 
 
-=======
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required onChange={e=>{setemail(e.target.value)}}/>
-
-    <div class="pw">
-    <label for="psw"><b>Password</b></label>
-    <input type="text" placeholder="Enter Password" name="psw" required onChange = {e => {setpassword(e.target.value)}}/>
-    </div>
-    
-    
-    <label>
-      <input type="checkbox" checked="checked" name="remember" /> Remember me
-    </label>
-    
-    
-
-    <div class="clearfix">
-      <button type="button" class="cancelbtn" onClick={e=>{console.log({email,password})}}>Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
-    </div>
-  </div>
->>>>>>> 8ce1e86ebb6c5e40e911fa808d23b036560fbf77
       
       
 
