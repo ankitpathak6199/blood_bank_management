@@ -25,7 +25,7 @@ const Blood_bank_model = require('../models/blood_bank');
 
 
 router.post(
- '/register',
+ '/',
  check('Name', 'Name is required').exists(),
  check('Email', 'Please include a valid email').exists(),
  check(
@@ -98,15 +98,16 @@ router.post(
 
      });
 
-     const salt = await bcrypt.genSalt(10);
+    //  const salt = await bcrypt.genSalt(10);
 
-     user.password = await bcrypt.hash(password, salt);
+    //  user.password = await bcrypt.hash(password, salt);
 
      await user.save();
 
      const payload = {
         user: {
-          id: user.id
+          id: user.id,
+          type: 2
         }
       };
 
