@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import Edit from '@material-ui/icons/Edit'
+import { Link } from 'react-router-dom';
 
 export default function Profile() {
+  const [] = useState()
     const user = {
         A1 : ["abc","def"],
         A2 :  ["def"],
@@ -163,6 +165,10 @@ export default function Profile() {
 
 
     <a href = "/create_donation">Create a donation Drives</a>
+    <Link to = {`/user/${user_id}`}>
+      user profile
+    </Link>
+
     
 
 

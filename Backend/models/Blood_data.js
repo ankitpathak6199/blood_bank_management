@@ -11,10 +11,21 @@ const Blood_data_schema= new mongoose.Schema({
         required:true,
         unique:true,
     },
-    user:{
+    donor:{
         type:String,
         unique: true,
         required: true, 
+    },
+    location_coordinates: {
+    type: {
+      type: String, // Don't do `{ location: { type: String } }`
+      enum: ['Point'], // 'location.type' must be 'Point'
+      required: true,
+    },
+    coordinates: {
+      type: [Number],
+      required: true
+    }
     },
     location:{
         state:{

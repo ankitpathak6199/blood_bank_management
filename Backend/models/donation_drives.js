@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 const Donation_drive_schema= new mongoose.Schema({
     drive_id:{
         type: String,
