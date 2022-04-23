@@ -1,13 +1,22 @@
 import React from 'react';
-import Profile from './profile';
+import Profile from './components/profile';
+import { Routes ,Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
+ 
     <div className="App">
       
-      <Profile/>
+        <Routes>
+        <Route path = "/" element = {<Profile/>}/>
+        <Route path = "/profile" />
+        </Routes>
+     
+      
+      
     </div>
+    
   );
 }
 
