@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import Edit from '@material-ui/icons/Edit'
 import { Link } from 'react-router-dom';
 
-export default function Profile() {
+export default function Profile({user_id}) {
   const [] = useState()
     const user = {
         A1 : ["abc","def"],

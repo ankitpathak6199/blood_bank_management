@@ -10,45 +10,50 @@ function Login() {
 
 
 
-<div class="container">
-    <h1>Sign Up</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr/>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required/>
+	 	
 
-    <div class="pw">
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required/>
-    </div>
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required/>
-    
-    <label>
-      <input type="checkbox" checked="checked" name="remember" /> Remember me
-    </label>
-    
-    
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="slide navbar style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true"/>
+            
+			<div class="signup">
+				<form>
+                    
+					<label for="chk" aria-hidden="true">Register</label>
+                    <div class='signup_form'>
+                    <input type="text" name="txt" placeholder="User name" required=""/>
+					<input type="email" name="email" placeholder="Email" required=""/>
+					<input type="password" name="pswd" placeholder="Password" required=""/>
+                    </div>
+                    <button>Sign up</button>
+				</form>
+			</div>
 
-    <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
-    </div>
-  </div>
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email" required=""/>
+					<input type="password" name="pswd" placeholder="Password" required=""/>
+					<button>Login</button>
+				</form>
+			</div>
+	</div>
+</body>
+</html>
+	
+
+
       
       
 
         </div>
-        
-      
-
-    
-    
-
-    
-
-
      
       
       

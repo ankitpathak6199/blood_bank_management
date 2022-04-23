@@ -3,7 +3,7 @@ import Profile from './components/profile';
 import UserProfile from './components/UserProfile';
 import { Routes ,Route } from 'react-router-dom';
 import './App.css';
-import Register from './register';
+import Register from './components/register';
 import Login from './components/Login';
 function App() {
   return (
