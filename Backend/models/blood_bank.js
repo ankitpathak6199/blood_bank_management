@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 
 const Blood_bank_Schema = new mongoose.Schema({
