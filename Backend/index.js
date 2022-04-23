@@ -1,12 +1,24 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import cors from 'cors';
+// import express from 'express';
+// import mongoose from 'mongoose';
+// import dotenv from 'dotenv';
+// import cors from 'cors';
+
+const express = require('express');
+ const path = require('path');
+ //var cors = require('cors');
+ const mongoose = require('mongoose');
+ const dotenv = require('dotenv');
+// const router = express.Router();
+//const cors = require('cors');
+
 
 
 const app=express();
 dotenv.config();
-app.use(cors);
+//app.use(cors);
+
+const register = require('./routes/register');
+//import register from './routes/register.js';
 
 
  mongoose.connect(process.env.DB_CONNECT,{useUnifiedTopology: true}).then(()=>{
@@ -14,13 +26,18 @@ app.use(cors);
       console.log(e)
   })
 
- app.use(express.json()); // express.json() convert the incoming json data(only) into object eg {"name":"mahak rawat"} to {name: mahak rawat}
+  app.get('/',(req,res)=>{
+      console.log("yewala");
+      res.send("hello");
+  })
+  app.use(express.json());
+  app.use("/register",register);
+  // express.json() convert the incoming json data(only) into object eg {"name":"mahak rawat"} to {name: mahak rawat}
 
- app.get('/',(req,res)=>{
-    res.send('Server is up');
- })
- const port= process.env.PORT;
- console.log(port);
- app.listen(port,"localhost",()=>{
-     console.log(`server is up on ${port}`);
+//  app.get('/',(req,res)=>{
+//     res.send('Server is up');
+//  })
+
+ app.listen(4000,()=>{
+     console.log(`server is up on `);
  })
