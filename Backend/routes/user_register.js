@@ -1,6 +1,7 @@
  const express = require('express');
  const router = express.Router();
  const path = require('path');
+ const axios = require('axios');
 
 // import express from 'express';
 // import mongoose from 'mongoose';
@@ -22,26 +23,48 @@ const userSchema = require('../models/user.js');
 
 
 router.post(
-  '/',
+  '/register',
   check('Name', 'Name is required').exists(),
-  check('Username', 'Please include a valid email').exists(),
+  check('Email', 'Please include a valid email').exists(),
   check(
     'Password',
     'Please enter a password with 6 or more characters'
   ).isLength({ min: 6 }),
+  check('Age', 'Age is required').exists(),
+  check('Blood_group', 'Blood Group is required' ).exists(),
+  check('City', 'Residence City is required'),
+  check('State', 'Residence state is required'),
+  check('Pincode', 'Residence pincode is required'),
   async (req, res) => {
      const errors = validationResult(req);
      if (!errors.isEmpty()) {
        return res.status(400).json({ errors: errors.array() });
      }
 
+
     const  name = req.body.Name;
-    const username = req.body.Username;
+    const email = req.body.Email;
     const password  = req.body.Password;
-    console.log(name,username,password);
+    const age = req.body.Age;
+    const blood_group = req.body.Blood_group;
+    const city = req.body.City;
+    const state = req.body.State;
+    const pincode = req.body.Pincode;
+    const phone_number = req.body.Phone_number;
+    //let locations;
+    console.log(name,email,password);
+
+    const url='https://api.mapbox.com/geocoding/v5/mapbox.places/'+ city + " " + state +'.json?access_token=pk.eyJ1IjoibWFoYWstcmF3YXQiLCJhIjoiY2tra3FpZjN1MDNoMjJ3bG9sdDdhdTY0ayJ9.zaTDuw_EF0IjEd3e8jwiQQ&limit=1'
+     await axios.get(url)
+     .then(({data})=>{
+         
+         req.body.location={type:'Point',coordinates:[data.features[0].center[0],data.features[0].center[1]]}
+         console.log(req.body.location.type);})
+         
+     .catch((err)=>{res.status(400).send(err)});
 
     try {
-      let user = await userSchema.findOne({ Username : username });
+      let user = await userSchema.findOne({ email : email });
 
       if (user) {
         return res
@@ -58,10 +81,23 @@ router.post(
     //     { forceHttps: true }
     //   );
 
+      console.log(req.body.location);
+      let locations =req.body.location;
       user = new userSchema({
-        Name : name,
-        Username :username,
-        Password:password
+        name : name,
+        age : age,
+        blood_group: blood_group,
+        phone_number: phone_number,
+        email :email,
+        password:password,
+        location :{
+        city: city,
+        state: state,
+        pincode: pincode,
+        },
+        location_coordinates: locations,
+    
+
       });
 
       const salt = await bcrypt.genSalt(10);
@@ -82,7 +118,7 @@ router.post(
 
         (err, token) => {
           if (err) throw err;
-          res.json({ token });
+          res.json({ token,user });
         }
      );
     } catch (err) {
