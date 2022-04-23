@@ -39,6 +39,31 @@ const userschema= mongoose.Schema({
              throw new Error('invalid email')
         }
     },
+    location_coordinates: {
+    type: {
+      type: String, // Don't do `{ location: { type: String } }`
+      enum: ['Point'], // 'location.type' must be 'Point'
+      required: true,
+    },
+    coordinates: {
+      type: [Number],
+      required: true
+    }
+    },
+    location:{
+        state:{
+           type: String,
+           required:true,
+        },
+        city:{
+           type: String,
+           required:true,
+        },
+        pincode:{
+           type: Number,
+           required:true,
+        }
+    },
     tokens: [{
         token:{
             type:String,
@@ -91,3 +116,14 @@ userschema.pre('remove',async function(next){
 })
 const user= mongoose.model('users',userschema)
 module.exports=user
+
+/*
+{
+    "name":"Mahak Rawat",
+    "age": "21",
+    "blood_group":"B+",
+    "email":"mahakrawat19@gmail.com",
+    "location":"Allahabad U.P. 211004",
+}
+
+*/ 

@@ -11,6 +11,17 @@ const Blood_bank_Schema = new mongoose.Schema({
         required:true,
         unique:true,
     },
+    location_coordinates: {
+    type: {
+      type: String, // Don't do `{ location: { type: String } }`
+      enum: ['Point'], // 'location.type' must be 'Point'
+      required: true,
+    },
+    coordinates: {
+      type: [Number],
+      required: true
+    }
+    },
     location:{
         state:{
            type: String,
