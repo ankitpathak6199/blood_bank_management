@@ -17,7 +17,8 @@ const app=express();
 dotenv.config();
 //app.use(cors);
 
-const register = require('./routes/register');
+const user_register = require('./routes/user_register');
+const blood_bank_register = require('./routes/blood_bank_register');
 //import register from './routes/register.js';
 
 
@@ -31,7 +32,8 @@ const register = require('./routes/register');
       res.send("hello");
   })
   app.use(express.json());
-  app.use("/register",register);
+  app.use("/user",user_register);
+  app.use("/bloodbank",blood_bank_register);
   // express.json() convert the incoming json data(only) into object eg {"name":"mahak rawat"} to {name: mahak rawat}
 
 //  app.get('/',(req,res)=>{
