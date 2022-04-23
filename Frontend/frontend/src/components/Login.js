@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react';
-import { signIn } from '../../../redux/actions/userActions';
+import { signIn } from '../redux/actions/userActions';
 
 import { Routes ,Route } from 'react-router-dom';
 import '../App.css';
@@ -16,7 +16,9 @@ function Login() {
   
   
   return (
+    <div>
  
+<<<<<<< HEAD
     <div className="Login">
 
 
@@ -64,7 +66,42 @@ function Login() {
       
       
 
+=======
+    <title>Slide Navbar</title>
+    <link rel="stylesheet" type="text/css" href="slide navbar style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet"/>
+  
+  
+    <div class="main">  	
+      <input type="checkbox" id="chk" aria-hidden="true"/>
+              
+        <div class="signup">
+          <form>
+                      
+            <label for="chk" aria-hidden="true">Register</label>
+                      <div class='signup_form'>
+                      <input type="text" name="txt" placeholder="User name" required=""/>
+            <input type="email" name="email" placeholder="Email" required=""/>
+            <input type="password" name="pswd" placeholder="Password" required=""/>
+                      </div>
+                      <button>Sign up</button>
+          </form>
+>>>>>>> 839feaac93f84444552474b8bde54a3f02ad5178
         </div>
+  
+        <div class="login">
+          <form>
+            <label for="chk" aria-hidden="true">Login</label>
+            <input type="email" name="email" placeholder="Email" required=""/>
+            <input type="password" name="pswd" placeholder="Password" required=""/>
+            <button>Login</button>
+          </form>
+        </div>
+    </div>
+    </div>
+      
+
+        
      
       
       
